@@ -1,0 +1,31 @@
+{
+  // Required
+  "manifest_version": 2,
+  "name": "My Extension",
+  "version": "versionString",
+
+  // Recommended
+  "default_locale": "en",
+  "description": "Smart Streamer",
+  "icons": {
+    "16": "icon1.png"
+  },
+
+  // Pick one (or none)
+  "browser_action": {
+    "default_popup": "sleeper.html"
+    "default_title": "Smart Streamer"
+  },
+
+
+  "permissions": [
+          "tabs"
+        ],
+
+  "content_scripts": [
+   {
+     "matches": ["http://*.nytimes.com/*"], //put different streaming sites: netflix, hulu, youtube, anything else?
+     "css": ["myStyles.css"],
+     "js": ["contentScript.js"]
+   }
+ ],
